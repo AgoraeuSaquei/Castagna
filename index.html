@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Menino do Mundo - Repertório Musical</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3a0ca3;
+            --secondary-color: #4cc9f0;
+            --accent-color: #f72585;
+            --background-color: #f8f9fa;
+            --text-color: #212529;
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSI+PC9yZWN0PjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSI+PC9yZWN0Pjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .search-container {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box {
+            display: flex;
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        #search {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        #search:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(58, 12, 163, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+
+        .repertorio-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .artista-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .artista-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .artista-header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .artista-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .musicas-list {
+            padding: 1.5rem;
+            list-style-type: none;
+        }
+
+        .musica-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .musica-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .musica-name {
+            font-weight: 500;
+            flex-grow: 1;
+        }
+
+        .pedir-btn {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .pedir-btn:hover {
+            background-color: #128C7E;
+            transform: scale(1.05);
+        }
+
+        .whatsapp-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.2rem;
+            color: #777;
+            grid-column: 1 / -1;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Botão flutuante do portfólio */
+        .portfolio-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: var(--transition);
+        }
+
+        .portfolio-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--accent-color);
+        }
+
+        .portfolio-icon {
+            font-size: 1.5rem;
+        }
+
+        .portfolio-tooltip {
+            position: absolute;
+            left: 60px;
+            background-color: white;
+            color: var(--text-color);
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 0.9rem;
+            width: max-content;
+            max-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+        }
+
+        .portfolio-tooltip::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid white;
+        }
+
+        .portfolio-btn:hover .portfolio-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .repertorio-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .repertorio-container {
+                grid-template-columns: 1fr;
+            }
+
+            .artista-name {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>O Menino do Mundo</h1>
+            <p class="subtitle">Repertório Musical</p>
+            <p>Escolha sua música favorita e faça seu pedido!</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="search" placeholder="Buscar música ou artista...">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+
+        <div class="repertorio-container" id="repertorio">
+            <!-- O conteúdo será gerado dinamicamente pelo JavaScript -->
+        </div>
+    </div>
+
+    <div class="back-to-top" id="backToTop">
+        ↑
+    </div>
+    
+    <a href="https://agoraeusaquei.github.io/Omeninodomundo/" target="_blank" class="portfolio-btn" id="portfolioBtn">
+        🎵
+        <div class="portfolio-tooltip">Conheça meu portfólio completo!</div>
+    </a>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">O Menino do Mundo</div>
+            <p>Músico profissional para eventos e shows</p>
+            <div class="social-links">
+                <a href="#" class="social-link">📱</a>
+                <a href="#" class="social-link">📷</a>
+                <a href="#" class="social-link">🎵</a>
+            </div>
+            <p>&copy; 2025 O Menino do Mundo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="repertorio_estruturado.js"></script>
+    <script>
+        // Número de WhatsApp (substitua pelo seu número)
+        const whatsappNumber = "5521999999999"; // Substitua pelo seu número com código do país e DDD
+
+        // Função para gerar o HTML do repertório
+        function renderRepertorio(filtro = '') {
+            const repertorioContainer = document.getElementById('repertorio');
+            repertorioContainer.innerHTML = '';
+
+            let encontrouResultados = false;
+
+            repertorio.forEach(artista => {
+                // Filtrar músicas que correspondem ao termo de busca
+                const musicasFiltradas = artista.musicas.filter(musica => 
+                    musica.toLowerCase().includes(filtro.toLowerCase())
+                );
+
+                // Verificar se o nome do artista corresponde ao termo de busca
+                const artistaCorresponde = artista.artista.toLowerCase().includes(filtro.toLowerCase());
+
+                // Se o artista corresponde ou tem músicas que correspondem, mostrar o card
+                if (artistaCorresponde || musicasFiltradas.length > 0) {
+                    encontrouResultados = true;
+
+                    const artistaCard = document.createElement('div');
+                    artistaCard.className = 'artista-card';
+
+                    const artistaHeader = document.createElement('div');
+                    artistaHeader.className = 'artista-header';
+                    artistaHeader.innerHTML = `<h2 class="artista-name">${artista.artista}</h2>`;
+
+                    const musicasList = document.createElement('ul');
+                    musicasList.className = 'musicas-list';
+
+                    // Se estamos filtrando e o artista corresponde, mostrar todas as músicas
+                    const musicasParaMostrar = artistaCorresponde ? artista.musicas : musicasFiltradas;
+
+                    musicasParaMostrar.forEach(musica => {
+                        const musicaItem = document.createElement('li');
+                        musicaItem.className = 'musica-item';
+
+                        const musicaName = document.createElement('span');
+                        musicaName.className = 'musica-name';
+                        musicaName.textContent = musica;
+
+                        const pedirBtn = document.createElement('button');
+                        pedirBtn.className = 'pedir-btn';
+                        pedirBtn.innerHTML = `
+                            <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                            </svg>
+                            Pedir
+                        `;
+                        
+                        pedirBtn.addEventListener('click', () => {
+                            const mensagem = `Olá! Gostaria de pedir a música "${musica}" do artista "${artista.artista}". Obrigado!`;
+                            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensagem)}`;
+                            window.open(whatsappUrl, '_blank');
+                        });
+
+                        musicaItem.appendChild(musicaName);
+                        musicaItem.appendChild(pedirBtn);
+                        musicasList.appendChild(musicaItem);
+                    });
+
+                    artistaCard.appendChild(artistaHeader);
+                    artistaCard.appendChild(musicasList);
+                    repertorioContainer.appendChild(artistaCard);
+                }
+            });
+
+            // Se não encontrou resultados, mostrar mensagem
+            if (!encontrouResultados) {
+                const noResults = document.createElement('div');
+                noResults.className = 'no-results';
+                noResults.textContent = 'Nenhum resultado encontrado. Tente outra busca.';
+                repertorioContainer.appendChild(noResults);
+            }
+        }
+
+        // Inicializar o repertório
+        document.addEventListener('DOMContentLoaded', () => {
+            renderRepertorio();
+
+            // Configurar a busca
+            const searchInput = document.getElementById('search');
+            searchInput.addEventListener('input', (e) => {
+                renderRepertorio(e.target.value);
+            });
+
+            // Configurar o botão de voltar ao topo
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Efeito de animação para os cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            setTimeout(() => {
+                document.querySelectorAll('.artista-card').forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    observer.observe(card);
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
