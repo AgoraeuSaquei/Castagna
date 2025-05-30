@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Menino do Mundo - Repertório Musical</title>
+    <title>Felipe Castagna - Repertório Musical</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #3a0ca3;
-            --secondary-color: #4cc9f0;
-            --accent-color: #f72585;
-            --background-color: #f8f9fa;
-            --text-color: #212529;
-            --card-bg: #ffffff;
-            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --primary-color: #3E2723;
+            --secondary-color: #8B0000;
+            --accent-color: #FF9800;
+            --background-color: #1A1A1A;
+            --text-color: #F5F1E6;
+            --card-bg: #2C1E17;
+            --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             --transition: all 0.3s ease;
         }
 
@@ -26,30 +26,47 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Special Elite', cursive;
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiBmaWxsPSJyZ2JhKDYyLCAzOSwgMzUsIDAuMikiPjwvcmVjdD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiPjwvcmVjdD48L3N2Zz4=');
             position: relative;
-            overflow: hidden;
         }
 
-        header::before {
+        body::before {
             content: '';
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSI+PC9yZWN0PjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSI+PC9yZWN0Pjwvc3ZnPg==');
-            opacity: 0.3;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSIxMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsIDE1MiwgMCwgMC4wMykiIHN0cm9rZS13aWR0aD0iMiI+PC9jaXJjbGU+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIj48L3JlY3Q+PC9zdmc+');
+            opacity: 0.5;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        header {
+            background: linear-gradient(to bottom, rgba(62, 39, 35, 0.9), rgba(26, 26, 26, 0.7)), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSI+PC9yZWN0PjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSI+PC9yZWN0Pjwvc3ZnPg==');
+            color: var(--text-color);
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            opacity: 0.7;
         }
 
         .header-content {
@@ -58,16 +75,20 @@
         }
 
         h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 152, 0, 0.3);
+            color: var(--accent-color);
         }
 
         .subtitle {
-            font-size: 1.2rem;
-            font-weight: 300;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
             margin-bottom: 1rem;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .container {
@@ -92,16 +113,20 @@
         #search {
             width: 100%;
             padding: 0.8rem 1rem;
-            border: 2px solid #ddd;
-            border-radius: 50px;
+            border: 2px solid var(--accent-color);
+            background-color: rgba(26, 26, 26, 0.7);
+            color: var(--text-color);
+            border-radius: 5px;
             font-size: 1rem;
+            font-family: 'Special Elite', cursive;
             outline: none;
             transition: var(--transition);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         #search:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(58, 12, 163, 0.2);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         .search-icon {
@@ -109,7 +134,7 @@
             right: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: #777;
+            color: var(--accent-color);
         }
 
         .repertorio-container {
@@ -120,40 +145,87 @@
 
         .artista-card {
             background-color: var(--card-bg);
-            border-radius: 10px;
+            border-radius: 5px;
             box-shadow: var(--card-shadow);
             overflow: hidden;
             transition: var(--transition);
+            border: 1px solid rgba(255, 152, 0, 0.2);
+            position: relative;
+        }
+
+        .artista-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InJnYmEoMCwgMCwgMCwgMC4wNSkiPjwvcmVjdD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiPjwvcmVjdD48L3N2Zz4=');
+            opacity: 0.1;
+            pointer-events: none;
         }
 
         .artista-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-color);
         }
 
         .artista-header {
             background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            color: white;
+            color: var(--text-color);
             padding: 1.5rem;
             position: relative;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .artista-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            opacity: 0.7;
         }
 
         .artista-name {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             font-weight: 600;
             margin: 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .toggle-icon {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            transition: var(--transition);
         }
 
         .musicas-list {
-            padding: 1.5rem;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
             list-style-type: none;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .musicas-list.expanded {
+            max-height: 1000px;
+            padding: 1.5rem;
         }
 
         .musica-item {
             margin-bottom: 1rem;
             padding-bottom: 1rem;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid rgba(255, 152, 0, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -165,27 +237,37 @@
             border-bottom: none;
         }
 
+        .musica-item::before {
+            content: '♪';
+            margin-right: 10px;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
         .musica-name {
-            font-weight: 500;
+            font-weight: 400;
             flex-grow: 1;
         }
 
         .pedir-btn {
-            background-color: #25D366;
-            color: white;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
             border: none;
-            border-radius: 50px;
+            border-radius: 5px;
             padding: 0.5rem 1rem;
             font-size: 0.9rem;
+            font-family: 'Special Elite', cursive;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 5px;
             transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .pedir-btn:hover {
-            background-color: #128C7E;
+            background-color: #E68A00;
             transform: scale(1.05);
         }
 
@@ -198,16 +280,22 @@
             text-align: center;
             padding: 2rem;
             font-size: 1.2rem;
-            color: #777;
+            color: var(--text-color);
             grid-column: 1 / -1;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            border: 1px solid var(--accent-color);
         }
 
         footer {
             background-color: var(--primary-color);
-            color: white;
+            color: var(--text-color);
             text-align: center;
             padding: 1.5rem;
             margin-top: 3rem;
+            border-top: 3px solid var(--accent-color);
+            position: relative;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0icmdiYSgwLCAwLCAwLCAwLjEpIj48L3JlY3Q+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIj48L3JlY3Q+PC9zdmc+');
         }
 
         .footer-content {
@@ -216,28 +304,32 @@
         }
 
         .footer-logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            color: var(--accent-color);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
             margin: 1rem 0;
         }
 
         .social-link {
-            color: white;
+            color: var(--text-color);
             font-size: 1.5rem;
             transition: var(--transition);
+            opacity: 0.8;
         }
 
         .social-link:hover {
-            color: var(--secondary-color);
+            color: var(--accent-color);
             transform: translateY(-3px);
+            opacity: 1;
         }
 
         .back-to-top {
@@ -245,7 +337,7 @@
             bottom: 20px;
             right: 20px;
             background-color: var(--accent-color);
-            color: white;
+            color: var(--primary-color);
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -253,10 +345,12 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
             opacity: 0;
             visibility: hidden;
             transition: var(--transition);
+            font-size: 1.5rem;
+            border: 2px solid rgba(62, 39, 35, 0.3);
         }
 
         .back-to-top.visible {
@@ -265,76 +359,37 @@
         }
 
         .back-to-top:hover {
-            background-color: var(--primary-color);
+            background-color: #E68A00;
             transform: translateY(-3px);
         }
 
-        /* Botão flutuante do portfólio */
-        .portfolio-btn {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: var(--primary-color);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 100;
-            transition: var(--transition);
-        }
-
-        .portfolio-btn:hover {
-            transform: scale(1.1);
-            background-color: var(--accent-color);
-        }
-
-        .portfolio-icon {
-            font-size: 1.5rem;
-        }
-
-        .portfolio-tooltip {
+        /* Decorações */
+        .decoration {
             position: absolute;
-            left: 60px;
-            background-color: white;
-            color: var(--text-color);
-            padding: 10px 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            font-size: 0.9rem;
-            width: max-content;
-            max-width: 200px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: var(--transition);
+            opacity: 0.1;
+            pointer-events: none;
         }
 
-        .portfolio-tooltip::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 50%;
-            transform: translateY(-50%);
-            border-top: 8px solid transparent;
-            border-bottom: 8px solid transparent;
-            border-right: 8px solid white;
+        .decoration-note-1 {
+            top: 10%;
+            left: 5%;
+            font-size: 3rem;
+            transform: rotate(-15deg);
+            color: var(--accent-color);
         }
 
-        .portfolio-btn:hover .portfolio-tooltip {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
+        .decoration-note-2 {
+            bottom: 15%;
+            right: 7%;
+            font-size: 2.5rem;
+            transform: rotate(20deg);
+            color: var(--accent-color);
         }
 
         /* Responsividade */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .repertorio-container {
@@ -345,11 +400,11 @@
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
 
             .subtitle {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .repertorio-container {
@@ -363,9 +418,12 @@
     </style>
 </head>
 <body>
+    <div class="decoration decoration-note-1">♫</div>
+    <div class="decoration decoration-note-2">♪</div>
+    
     <header>
         <div class="header-content">
-            <h1>O Menino do Mundo</h1>
+            <h1>Felipe Castagna</h1>
             <p class="subtitle">Repertório Musical</p>
             <p>Escolha sua música favorita e faça seu pedido!</p>
         </div>
@@ -387,29 +445,24 @@
     <div class="back-to-top" id="backToTop">
         ↑
     </div>
-    
-    <a href="https://agoraeusaquei.github.io/Omeninodomundo/" target="_blank" class="portfolio-btn" id="portfolioBtn">
-        🎵
-        <div class="portfolio-tooltip">Conheça meu portfólio completo!</div>
-    </a>
 
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">O Menino do Mundo</div>
+            <div class="footer-logo">Felipe Castagna</div>
             <p>Músico profissional para eventos e shows</p>
             <div class="social-links">
                 <a href="#" class="social-link">📱</a>
                 <a href="#" class="social-link">📷</a>
                 <a href="#" class="social-link">🎵</a>
             </div>
-            <p>&copy; 2025 O Menino do Mundo. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Felipe Castagna. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <script src="repertorio_estruturado.js"></script>
     <script>
-        // Número de WhatsApp (substitua pelo seu número)
-        const whatsappNumber = "5522981537347"; // Substitua pelo seu número com código do país e DDD
+        // Número de WhatsApp (substitua pelo número correto)
+        const whatsappNumber = "5522981537347"; // Substitua pelo número correto com código do país e DDD
 
         // Função para gerar o HTML do repertório
         function renderRepertorio(filtro = '') {
@@ -436,7 +489,17 @@
 
                     const artistaHeader = document.createElement('div');
                     artistaHeader.className = 'artista-header';
-                    artistaHeader.innerHTML = `<h2 class="artista-name">${artista.artista}</h2>`;
+                    
+                    const artistaName = document.createElement('h2');
+                    artistaName.className = 'artista-name';
+                    artistaName.textContent = artista.artista;
+                    
+                    const toggleIcon = document.createElement('span');
+                    toggleIcon.className = 'toggle-icon';
+                    toggleIcon.textContent = '+';
+                    
+                    artistaHeader.appendChild(artistaName);
+                    artistaHeader.appendChild(toggleIcon);
 
                     const musicasList = document.createElement('ul');
                     musicasList.className = 'musicas-list';
@@ -472,6 +535,12 @@
                         musicasList.appendChild(musicaItem);
                     });
 
+                    // Adicionar evento de clique para expandir/colapsar
+                    artistaHeader.addEventListener('click', () => {
+                        musicasList.classList.toggle('expanded');
+                        toggleIcon.textContent = musicasList.classList.contains('expanded') ? '-' : '+';
+                    });
+
                     artistaCard.appendChild(artistaHeader);
                     artistaCard.appendChild(musicasList);
                     repertorioContainer.appendChild(artistaCard);
@@ -491,13 +560,13 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderRepertorio();
 
-            // Configurar a busca
+            // Adicionar evento de busca
             const searchInput = document.getElementById('search');
-            searchInput.addEventListener('input', (e) => {
-                renderRepertorio(e.target.value);
+            searchInput.addEventListener('input', () => {
+                renderRepertorio(searchInput.value);
             });
 
-            // Configurar o botão de voltar ao topo
+            // Botão de voltar ao topo
             const backToTopBtn = document.getElementById('backToTop');
             
             window.addEventListener('scroll', () => {
@@ -507,34 +576,13 @@
                     backToTopBtn.classList.remove('visible');
                 }
             });
-
+            
             backToTopBtn.addEventListener('click', () => {
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // Efeito de animação para os cards
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            setTimeout(() => {
-                document.querySelectorAll('.artista-card').forEach(card => {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    observer.observe(card);
-                });
-            }, 100);
         });
     </script>
 </body>
